@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 const Card = ({ title, children }) => {
   return (
-    <div className="card">
-      <h3>{title}</h3>
-      <hr />
-      {children}
+    <div className="quest-card">
+      <div className="card-banner">
+        <h3>{title}</h3>
+      </div>
+      <div className="card-body">
+        {children}
+      </div>
     </div>
   );
 };

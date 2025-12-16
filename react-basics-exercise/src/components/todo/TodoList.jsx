@@ -4,15 +4,11 @@ import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, onToggle, onDelete }) => {
   if (todos.length === 0) {
-    return (
-      <p style={{ textAlign: 'center', color: '#999', padding: '2rem' }}>
-        No todos yet. Add one above!
-      </p>
-    );
+    return <p className="empty-quest">📜 No quests available. Add a new quest above!</p>;
   }
 
   return (
-    <ul className="todo-list">
+    <ul className="quest-list">
       {todos.map(todo => (
         <TodoItem
           key={todo.id}

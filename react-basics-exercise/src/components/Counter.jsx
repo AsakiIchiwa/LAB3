@@ -4,18 +4,30 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="counter">
-      <h3>Counter Component</h3>
-      <p>Current Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)} style={{ marginLeft: '0.5rem' }}>
-        Decrement
-      </button>
-      <button onClick={() => setCount(0)} style={{ marginLeft: '0.5rem' }}>
-        Reset
-      </button>
+    <div className="rpg-panel">
+      <div className="panel-header">
+        <h3>⚡ Power Counter</h3>
+      </div>
+      <div className="counter-display">
+        <div className="power-meter">
+          <span className="power-label">Power Level:</span>
+          <span className="power-value">{count}</span>
+        </div>
+      </div>
+      <div className="button-group">
+        <button className="rpg-button primary" onClick={() => setCount(count + 1)}>
+          <span>▲ Increase</span>
+        </button>
+        <button className="rpg-button secondary" onClick={() => setCount(count - 1)}>
+          <span>▼ Decrease</span>
+        </button>
+        <button className="rpg-button danger" onClick={() => setCount(0)}>
+          <span>↻ Reset</span>
+        </button>
+      </div>
     </div>
   );
 };
+
 
 export default Counter;

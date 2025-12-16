@@ -13,15 +13,18 @@ const TodoForm = ({ onAddTodo }) => {
   };
 
   return (
-    <div className="todo-form">
+    <div className="quest-form">
       <input
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Enter a new task"
+        placeholder="Enter a new quest..."
         onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
+        className="rpg-input"
       />
-      <button onClick={handleSubmit}>Add Todo</button>
+      <button onClick={handleSubmit} className="rpg-button primary">
+        <span>➕ New Quest</span>
+      </button>
     </div>
   );
 };

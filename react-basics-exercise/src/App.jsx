@@ -23,42 +23,44 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>🚀 React Lab 3 - Complete Solution</h1>
+      <div className="app-header">
+        <h1>⚔️ React Quest: Lab 3 Adventure ⚔️</h1>
+      </div>
       
       <section className="section">
-        <h2>Part II: User Profile Components</h2>
+        <h2 className="section-title">👥 Character Profiles</h2>
         <div className="grid">
-          <Card title="User Profile 1 (Light Theme)">
+          <Card title="🌟 Warrior Profile">
             <UserProfile userData={user1} theme="light" />
           </Card>
-          <Card title="User Profile 2 (Dark Theme)">
+          <Card title="🌙 Shadow Knight">
             <UserProfile userData={user2} theme="dark" />
           </Card>
         </div>
       </section>
 
       <section className="section">
-        <h2>Part III: State and Interactivity</h2>
+        <h2 className="section-title">⚡ Power & Guild Access</h2>
         <div className="grid">
-          <Card title="Counter Exercise">
+          <Card title="💪 Power Management">
             <Counter />
           </Card>
-          <Card title="Login Form Exercise">
+          <Card title="🏰 Guild Entrance">
             <Login />
           </Card>
         </div>
       </section>
 
       <section className="section">
-        <h2>Part IV: Accordion (Lifting State Up)</h2>
-        <Card title="Accordion Example">
+        <h2 className="section-title">📚 Ancient Knowledge</h2>
+        <Card title="📖 Wisdom Scrolls">
           <Accordion />
         </Card>
       </section>
 
       <section className="section">
-        <h2>Part VI: Capstone Project - Todo List</h2>
-        <Card title="Todo Application">
+        <h2 className="section-title">🗺️ Quest System</h2>
+        <Card title="📜 Active Quests">
           <TodoApp />
         </Card>
       </section>

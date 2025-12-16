@@ -14,43 +14,46 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Data:', formData);
-    alert(`Logged in as: ${formData.username}`);
+    alert(`🎮 Welcome, ${formData.username}! Your quest begins...`);
   };
 
   return (
-    <div className="login-form">
-      <h3>Login Component</h3>
-      <div className="form-container">
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
+    <div className="rpg-panel">
+      <div className="panel-header">
+        <h3>🗝️ Guild Login</h3>
+      </div>
+      <div className="login-content">
+        <div className="form-field">
+          <label className="field-label">⚔️ Warrior Name:</label>
           <input
             type="text"
-            id="username"
             name="username"
             value={formData.username}
             onChange={handleChange}
-            placeholder="Enter username"
+            placeholder="Enter your name..."
+            className="rpg-input"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+        <div className="form-field">
+          <label className="field-label">🔐 Secret Code:</label>
           <input
             type="password"
-            id="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
-            placeholder="Enter password"
+            placeholder="Enter password..."
+            className="rpg-input"
           />
         </div>
-        <button onClick={handleSubmit}>Login</button>
-      </div>
-      <div className="form-display">
-        <p><strong>Current Username:</strong> {formData.username}</p>
-        <p><strong>Current Password:</strong> {formData.password ? '•'.repeat(formData.password.length) : ''}</p>
+        <button className="rpg-button primary full-width" onClick={handleSubmit}>
+          <span>⚔️ Enter the Guild</span>
+        </button>
+        <div className="status-display">
+          <p>Name: <span className="highlight">{formData.username || '---'}</span></p>
+          <p>Code: <span className="highlight">{formData.password ? '🔒 '.repeat(formData.password.length) : '---'}</span></p>
+        </div>
       </div>
     </div>
   );
 };
-
 export default Login;
