@@ -27,7 +27,7 @@ const App = () => {
       
       <header className="main-header">
         <div className="header-emblem">⚔️</div>
-        <h1>React Quest: Lab 3 Adventure</h1>
+        <h1>Lab 3 React</h1>
         <div className="header-emblem">⚔️</div>
       </header>
 
@@ -64,7 +64,7 @@ const App = () => {
           <h2 className="section-title">
             <span>◆</span> Knowledge <span>◆</span>
           </h2>
-          <Card title="📚 Sacred Texts">
+          <Card title="Sacred Texts">
             <Accordion />
           </Card>
         </section>
