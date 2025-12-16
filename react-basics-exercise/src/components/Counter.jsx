@@ -4,30 +4,36 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="rpg-panel">
+    <div className="game-panel">
       <div className="panel-header">
-        <h3>⚡ Power Counter</h3>
+        <h3>⚡ Power Meter ⚡</h3>
       </div>
+      
       <div className="counter-display">
-        <div className="power-meter">
-          <span className="power-label">Power Level:</span>
-          <span className="power-value">{count}</span>
+        <div className="energy-orb">
+          <div className="orb-pulse"></div>
+          <div className="orb-core">
+            <span className="count-value">{count}</span>
+          </div>
         </div>
+        <p className="energy-label">ENERGY LEVEL</p>
       </div>
-      <div className="button-group">
-        <button className="rpg-button primary" onClick={() => setCount(count + 1)}>
-          <span>▲ Increase</span>
+
+      <div className="button-row">
+        <button className="rpg-btn success" onClick={() => setCount(count + 1)}>
+          <span>▲ Charge</span>
         </button>
-        <button className="rpg-button secondary" onClick={() => setCount(count - 1)}>
-          <span>▼ Decrease</span>
+        <button className="rpg-btn info" onClick={() => setCount(count - 1)}>
+          <span>▼ Drain</span>
         </button>
-        <button className="rpg-button danger" onClick={() => setCount(0)}>
+        <button className="rpg-btn danger" onClick={() => setCount(0)}>
           <span>↻ Reset</span>
         </button>
       </div>
     </div>
   );
 };
+
 
 
 export default Counter;

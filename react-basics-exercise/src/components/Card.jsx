@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Card = ({ title, children }) => {
   return (
     <div className="quest-card">
-      <div className="card-banner">
+      <div className="card-header">
         <h3>{title}</h3>
       </div>
       <div className="card-body">

@@ -18,12 +18,12 @@ const TodoForm = ({ onAddTodo }) => {
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Enter a new quest..."
+        placeholder="Describe your quest..."
         onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
         className="rpg-input"
       />
-      <button onClick={handleSubmit} className="rpg-button primary">
-        <span>➕ New Quest</span>
+      <button onClick={handleSubmit} className="rpg-btn primary">
+        <span>+ Add Quest</span>
       </button>
     </div>
   );

@@ -5,26 +5,23 @@ const Login = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
-    alert(`🎮 Welcome, ${formData.username}! Your quest begins...`);
+    alert(`⚔️ Welcome, ${formData.username}!`);
   };
 
   return (
-    <div className="rpg-panel">
+    <div className="game-panel">
       <div className="panel-header">
-        <h3>🗝️ Guild Login</h3>
+        <h3>🗝️ Guild Portal 🗝️</h3>
       </div>
-      <div className="login-content">
+
+      <div className="login-form">
         <div className="form-field">
-          <label className="field-label">⚔️ Warrior Name:</label>
+          <label>⚔️ Warrior Name</label>
           <input
             type="text"
             name="username"
@@ -34,8 +31,9 @@ const Login = () => {
             className="rpg-input"
           />
         </div>
+
         <div className="form-field">
-          <label className="field-label">🔐 Secret Code:</label>
+          <label>🔐 Secret Code</label>
           <input
             type="password"
             name="password"
@@ -45,12 +43,14 @@ const Login = () => {
             className="rpg-input"
           />
         </div>
-        <button className="rpg-button primary full-width" onClick={handleSubmit}>
-          <span>⚔️ Enter the Guild</span>
+
+        <button className="rpg-btn primary full-width" onClick={handleSubmit}>
+          <span>Enter Guild</span>
         </button>
+
         <div className="status-display">
           <p>Name: <span className="highlight">{formData.username || '---'}</span></p>
-          <p>Code: <span className="highlight">{formData.password ? '🔒 '.repeat(formData.password.length) : '---'}</span></p>
+          <p>Code: <span className="highlight">{formData.password ? '🔒'.repeat(Math.min(formData.password.length, 6)) : '---'}</span></p>
         </div>
       </div>
     </div>

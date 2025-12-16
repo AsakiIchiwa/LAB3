@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 const Panel = ({ title, children, isActive, onShow }) => {
   return (
-    <div className="accordion-panel">
-      <div className="panel-title-bar" onClick={onShow}>
-        <h4>{isActive ? '📖' : '📕'} {title}</h4>
-        <span className="panel-toggle">{isActive ? '▼' : '▶'}</span>
+    <div className={`scroll-item ${isActive ? 'active' : ''}`}>
+      <div className="scroll-header" onClick={onShow}>
+        <span>{isActive ? '📖' : '📕'} {title}</span>
+        <span className="toggle-icon">{isActive ? '▼' : '▶'}</span>
       </div>
       {isActive && (
-        <div className="panel-body">
+        <div className="scroll-body">
           {children}
         </div>
       )}
@@ -23,6 +23,5 @@ Panel.propTypes = {
   isActive: PropTypes.bool.isRequired,
   onShow: PropTypes.func.isRequired
 };
-
 
 export default Panel;

@@ -4,18 +4,13 @@ import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, onToggle, onDelete }) => {
   if (todos.length === 0) {
-    return <p className="empty-quest">📜 No quests available. Add a new quest above!</p>;
+    return <p className="empty-state">📜 No quests available</p>;
   }
 
   return (
     <ul className="quest-list">
       {todos.map(todo => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          onToggle={onToggle}
-          onDelete={onDelete}
-        />
+        <TodoItem key={todo.id} todo={todo} onToggle={onToggle} onDelete={onDelete} />
       ))}
     </ul>
   );

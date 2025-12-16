@@ -8,14 +8,10 @@ const TodoItem = ({ todo, onToggle, onDelete }) => {
         type="checkbox"
         checked={todo.completed}
         onChange={() => onToggle(todo.id)}
-        className="quest-checkbox"
       />
-      <span className="quest-text">
-        {todo.completed && '✓ '}
-        {todo.text}
-      </span>
-      <button onClick={() => onDelete(todo.id)} className="rpg-button danger small">
-        <span>🗑️</span>
+      <span className="quest-text">{todo.text}</span>
+      <button onClick={() => onDelete(todo.id)} className="rpg-btn danger small">
+        🗑️
       </button>
     </li>
   );
@@ -30,5 +26,6 @@ TodoItem.propTypes = {
   onToggle: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired
 };
+
 
 export default TodoItem;
